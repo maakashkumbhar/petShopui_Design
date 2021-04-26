@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Color primaryGreen = Color(0xff00796B);
 Color drawercolor = Color(0xffdcdcdc);
+String profileImage =
+    'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80';
 List<BoxShadow> shadowList = [
   BoxShadow(color: Colors.grey[300], blurRadius: 30, offset: Offset(0, 10))
 ];

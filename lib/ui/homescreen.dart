@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pet_ui/config.dart';
+import 'package:pet_ui/ui/descriptionPage.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -165,11 +166,127 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 50,
                           color: Colors.grey[700],
                         ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(categories[index]['name']),
                       )
                     ],
                   ),
                 );
               },
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  height: 200,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 180,
+                          width: 190,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: shadowList,
+                              color: Colors.blueGrey[200]),
+                          child: Center(
+                            child: Stack(
+                              children: [
+                                Image.asset(
+                                  'images/pet-cat1.png',
+                                  fit: BoxFit.fill,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              color: Colors.white70,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'Scala',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontFamily: 'Circular',
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Icon(
+                                      FontAwesomeIcons.male,
+                                      size: 20,
+                                      color: Colors.grey,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Algerian Cats',
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.location_on,
+                                    color: Colors.grey,
+                                  ),
+                                  Text('This is some City.')
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.green,
+                                  ),
+                                  child: IconButton(
+                                      icon: Icon(Icons.arrow_forward_ios),
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DescrpitionPage()));
+                                      }),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           )
         ],
